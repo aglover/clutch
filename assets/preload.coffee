@@ -1,2 +1,2 @@
-$(window).load ->
+$(document).ready ->
     $.preloadCssImages()
