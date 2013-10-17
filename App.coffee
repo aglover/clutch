@@ -1,0 +1,28 @@
+require './config/Bootstrap'
+express = require 'express'
+db = require './config/Datastore'
+routes = require('./app/routes/Index')(db.datastore)
+
+app = express express.logger() 
+app.use express.errorHandler({ dumpExceptions: true, showStack: true })
+
+app.use(require('asset-pipeline')({
+    server: app,
+    assets: './assets',
+    debug: false,
+    extensions: ['.js'],
+    cache: './public/js'
+}))
+
+app.set 'view engine', 'jade'
+
+app.use '/components', express.static(__dirname + '/public/components') # set up bower
+app.use '/img', express.static(__dirname + '/public/img')
+app.use '/css', express.static(__dirname + '/public/css')
+
+app.get '/', routes.index
+
+port = process.env.PORT or 3000
+
+app.listen port, ->
+	console.log "listening on #{port}"
