@@ -7,9 +7,12 @@ module.exports = (db) ->
 				console.log "there was an error! #{err}"
 			else
 				animals = []
+				imageUrls = []
 				for mammal in allMammals
 					animals.push new AnimalModel.Animal(mammal._id, mammal.type, mammal.animal, mammal.group, mammal.image)
+					imageUrls.push "background-image:url(img/#{mammal.image})"
 
-				res.render 'index', {animals: animals}
+				finalCss = "{width: 0px;height: 0px;display: inline; #{imageUrls.join(';')}; background-image: url();}"
+				res.render 'index', {animals: animals, css: finalCss}
 
 		
