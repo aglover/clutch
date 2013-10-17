@@ -1,6 +1,5 @@
 $(document).on "pageinit", (event) ->
   $("div.ui-page").on "swipeleft", ->
-    console.log "swipe left"
     nextpage = $(this).next("div[data-role=\"page\"]")
     $.mobile.changePage(nextpage, { transition: "slide", reverse: false }, false, true) if nextpage.length > 0
 

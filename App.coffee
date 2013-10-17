@@ -19,6 +19,7 @@ app.set 'view engine', 'jade'
 app.use '/components', express.static(__dirname + '/public/components') # set up bower
 app.use '/img', express.static(__dirname + '/public/img')
 app.use '/css', express.static(__dirname + '/public/css')
+app.use '/javascripts', express.static(__dirname + '/public/javascripts')
 
 app.get '/', routes.index
 
