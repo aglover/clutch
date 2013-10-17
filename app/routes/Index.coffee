@@ -10,9 +10,9 @@ module.exports = (db) ->
 				imageUrls = []
 				for mammal in allMammals
 					animals.push new AnimalModel.Animal(mammal._id, mammal.type, mammal.animal, mammal.group, mammal.image)
-					imageUrls.push "background-image:url(img/#{mammal.image})"
+					imageUrls.push "url(img/#{mammal.image})"
 
-				finalCss = "{width: 0px;height: 0px;display: inline; #{imageUrls.join(';')}; background-image: url();}"
+				finalCss = "body:after {content: #{imageUrls.join(' ')}; display: none;}"
 				res.render 'index', {animals: animals, css: finalCss}
 
 		
