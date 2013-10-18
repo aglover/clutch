@@ -18,7 +18,7 @@ html
       div(id='#{animal.id}' data-role='page', data-theme='c')
         div(data-theme='e', data-role='header')
           h1
-            | #{animal.group.capitalize()}
+            | #{animal.group.capitalize()} of #{animal.name.capitalize()}
         div(data-role='content')
           .center-wrapper
             figure
@@ -26,3 +26,13 @@ html
                 .image(style='background: url(/img/#{animal.img}) center no-repeat; background-size: cover;')
               figcaption
                 | A group of <b>#{animal.name}</b> is called a <b>#{animal.group}</b>.
+
+        div(data-theme='e', data-role='footer', data-id='footer', data-position='fixed')
+          div(data-role='navbar')
+            ul
+              li
+                a(href='#', data-icon='mammals') Mammals
+              li
+                a(href='#', data-icon='reptiles') Reptiles
+              li
+                a(href='#', data-icon='birds') Birds

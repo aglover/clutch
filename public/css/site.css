@@ -17,3 +17,15 @@
 	border-radius: 5px;
 	height: inherit;
 }
+
+.ui-icon-reptiles {
+	background-image: url("/img/icons/reptile-icon.png");
+}
+
+.ui-icon-birds {
+	background-image: url("/img/icons/bird-icon.png");
+}
+
+.ui-icon-mammals {
+	background-image: url("/img/icons/mammal-icon.png");
+}
