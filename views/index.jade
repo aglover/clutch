@@ -5,9 +5,9 @@ html
     meta(name='apple-mobile-web-app-capable', content='yes')
     meta(name='apple-mobile-web-app-status-bar-style', content='black')
     title Clutch
-    -var finalCss = "body:after {content: " + imagePaths.join(' ') + "; display: none;}"
+    -var css = "body:after {content: " + imagePaths.join(' ') + "; display: none;}"
     style(type='text/css').
-      #{finalCss}
+      #{css}
     link(rel='stylesheet', type='text/css', href='/css/site.css')
     link(rel='stylesheet', type='text/css', href='/components/jqm-flatui/generated/jquery.mobile.flatui.min.css')
     script(src='https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js')
@@ -16,8 +16,8 @@ html
   body
     each animal in animals
       div(id='#{animal.id}' data-role='page', data-theme='c')
-        div(data-theme='g', data-role='header')
-          h3
+        div(data-theme='e', data-role='header')
+          h1
             | #{animal.group.capitalize()}
         div(data-role='content')
           .center-wrapper
@@ -25,4 +25,4 @@ html
               .wrap
                 .image(style='background: url(/img/#{animal.img}) center no-repeat; background-size: cover;')
               figcaption
-                | A group of #{animal.name} is called a #{animal.group}.
+                | A group of <b>#{animal.name}</b> is called a <b>#{animal.group}</b>.
