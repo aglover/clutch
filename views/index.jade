@@ -5,8 +5,9 @@ html
     meta(name='apple-mobile-web-app-capable', content='yes')
     meta(name='apple-mobile-web-app-status-bar-style', content='black')
     title Clutch
+    -var finalCss = "body:after {content: " + imagePaths.join(' ') + "; display: none;}"
     style(type='text/css').
-      #{css}
+      #{finalCss}
     link(rel='stylesheet', type='text/css', href='/css/site.css')
     link(rel='stylesheet', type='text/css', href='/components/jqm-flatui/generated/jquery.mobile.flatui.min.css')
     script(src='https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js')
