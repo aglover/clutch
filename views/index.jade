@@ -5,7 +5,7 @@ html
     meta(name='apple-mobile-web-app-capable', content='yes')
     meta(name='apple-mobile-web-app-status-bar-style', content='black')
     title Clutch
-    -var css = "body:after {content: " + imagePaths.join(' ') + "; display: none;}"
+    -var css = "body:after {content: " + imagePaths.join(' ') + " url(/img/icons/reptile-icon.png) url(/img/icons/bird-icon.png) url(/img/icons/mammal-icon.png); display: none;}"
     style(type='text/css').
       #{css}
     link(rel='stylesheet', type='text/css', href='/css/site.css')
