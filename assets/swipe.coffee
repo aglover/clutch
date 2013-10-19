@@ -1,11 +1,9 @@
 $(document).on "pageinit", (event) ->
   $("div.ui-page").on "swipeleft", (event)->
-    nextpage = $(this).next("div[data-role=\"page\"]")
-    slide event, {page: nextpage, reverse: false}
+    slide event, {page: $(this).next("div[data-role=\"page\"]"), reverse: false}
     	
   $("div.ui-page").on "swiperight", (event)->
-    prevpage = $(this).prev("div[data-role=\"page\"]")
-    slide event, {page: prevpage, reverse: true}
+    slide event, {page: $(this).prev("div[data-role=\"page\"]"), reverse: true}
 
   slide = (event, options) ->
   	page = options.page
