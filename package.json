@@ -1,5 +1,5 @@
 {
-	"name" : "my-app",
+	"name" : "clutch",
 	"version" : "0.0.1",
 	"dependencies":{
 		"express" : "latest",
@@ -7,7 +7,9 @@
 		"coffee-script" : "latest",
 		"mongoskin":"latest",		
 	  "asset-pipeline":"latest",
-		"bower":"latest"
+		"bower":"latest",
+		"mocha" : "latest",
+		"should" : "latest"
 	},
 	"scripts": {
        "postinstall": "./node_modules/bower/bin/bower install"

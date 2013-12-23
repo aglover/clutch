@@ -20,7 +20,9 @@ app.use '/components', express.static(__dirname + '/public/components') # set up
 app.use '/img', express.static(__dirname + '/public/img')
 app.use '/css', express.static(__dirname + '/public/css')
 
-app.get '/', routes.index
+app.get '/', routes.animals
+app.get '/reptiles', routes.animals
+app.get '/birds', routes.animals
 
 port = process.env.PORT or 3000
 

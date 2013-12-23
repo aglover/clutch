@@ -1,16 +1,20 @@
 AnimalModel = require '../models/Animal'
 
 module.exports = (db) ->
-	index: (req, res) ->
-		db.clutch.mammals (err, allMammals) ->
+	animals: (req, res) ->
+		itype = req.path.slice(1)
+		if itype.length is 0
+			itype = 'mammals'
+
+		db.clutch[itype] (err, allAnimals) ->
 			if err
 				console.log "there was an error! #{err}"
 			else
 				animals = []
 				imagePaths = []
-				for mammal in allMammals
-					animals.push new AnimalModel.Animal(mammal._id, mammal.type, mammal.animal, mammal.group, mammal.image)
-					imagePaths.push "url(img/#{mammal.image})"
+				for animal in allAnimals
+					animals.push new AnimalModel.Animal(animal._id, animal.type, animal.animal, animal.group, animal.image)
+					imagePaths.push "url(img/#{animal.image})"
 
 				res.render 'index', {animals: animals, imagePaths: imagePaths}
 
