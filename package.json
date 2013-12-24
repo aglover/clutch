@@ -1,6 +1,6 @@
 {
 	"name" : "clutch",
-	"version" : "0.0.1",
+	"version" : "1.0.0",
 	"dependencies":{
 		"express" : "latest",
 		"jade" : "latest",
@@ -12,7 +12,8 @@
 		"should" : "latest"
 	},
 	"scripts": {
-       "postinstall": "./node_modules/bower/bin/bower install"
+       "postinstall": "./node_modules/bower/bin/bower install",
+       "update": "./node_modules/bower/bin/bower update"
     },
 	"engines" : {
 		"node" : "0.8.22",

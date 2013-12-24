@@ -2,6 +2,6 @@
   "name" : "my-app",
   "version" : "0.0.1",
   "dependencies": {
-    "jqm-flatui": "latest"
+    "jqm-flatui": "jqm-1.3.1"
   }
 }
