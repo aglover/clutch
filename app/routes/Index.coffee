@@ -3,7 +3,7 @@ AnimalModel = require '../models/Animal'
 module.exports = (db) ->
 	animals: (req, res) ->
 		itype = req.path.slice(1)
-		if itype.length is 0
+		if itype.length is 0 and itype not in ['reptiles', 'birds']
 			itype = 'mammals'
 
 		db.clutch[itype] (err, allAnimals) ->
@@ -17,5 +17,3 @@ module.exports = (db) ->
 					imagePaths.push "url(img/#{animal.image})"
 
 				res.render 'index', {animals: animals, imagePaths: imagePaths}
-
-		
