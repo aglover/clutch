@@ -12,7 +12,8 @@
 		"should" : "latest"
 	},
 	"scripts": {
-       "postinstall": "./node_modules/bower/bin/bower install"
+       "postinstall": "./node_modules/bower/bin/bower install",
+       "update": "./node_modules/bower/bin/bower update"
     },
 	"engines" : {
 		"node" : "0.8.22",
