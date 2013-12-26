@@ -1,10 +1,8 @@
-AnimalModel = require '../models/Animal'
+Animal = require '../models/Animal'
 
 module.exports = (db) ->
 	animals: (req, res) ->
-		itype = req.path.slice(1)
-		if itype.length is 0 and itype not in ['reptiles', 'birds']
-			itype = 'mammals'
+		itype = Animal.typeFrom req.path
 
 		db.clutch[itype] (err, allAnimals) ->
 			if err
@@ -13,7 +11,7 @@ module.exports = (db) ->
 				animals = []
 				imagePaths = []
 				for animal in allAnimals
-					animals.push new AnimalModel.Animal(animal._id, animal.type, animal.animal, animal.group, animal.image)
+					animals.push new Animal(animal._id, animal.type, animal.animal, animal.group, animal.image)
 					imagePaths.push "url(img/#{animal.image})"
 
 				res.render 'index', {animals: animals, imagePaths: imagePaths}

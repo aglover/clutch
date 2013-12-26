@@ -1,7 +1,7 @@
 require './config/Bootstrap'
 express = require 'express'
 db = require './config/Datastore'
-routes = require('./app/routes/Index')(db.datastore)
+routes = require('./app/routes/Index')(db)
 
 app = express express.logger() 
 app.use express.errorHandler({ dumpExceptions: true, showStack: true })

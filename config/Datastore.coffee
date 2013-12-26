@@ -16,4 +16,4 @@ db.bind 'clutch', {
 		this.findByType('bird', fn)
 }
 
-exports.datastore = db
+module.exports = db
