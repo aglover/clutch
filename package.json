@@ -1,29 +1,29 @@
 {
-	"name" : "clutch",
+	"name"    : "clutch",
 	"version" : "1.0.0",
 
-	"dependencies":{
-		"express" : "latest",
-		"jade" : "latest",
-		"coffee-script" : "latest",
-		"mongoskin":"latest",		
-	  "asset-pipeline":"latest"
+	"dependencies" : {
+		"express"        : "latest",
+		"jade"           : "latest",
+		"coffee-script"  : "latest",
+		"mongoskin"      : "latest",		
+	  "asset-pipeline" : "latest"
 	},
 
-	"devDependencies": {
-    "mocha" : "latest",
+	"devDependencies" : {
+    "mocha"  : "latest",
 		"should" : "latest",
-		"bower":"latest"
+		"bower"  : "latest"
   },
 
-	"scripts": {
-	  "postinstall": "./node_modules/bower/bin/bower install",
-    "update": "./node_modules/bower/bin/bower update",
-    "test": "./node_modules/mocha/bin/mocha --compilers coffee:coffee-script -c -t 10000 -R spec"
+	"scripts" : {
+	  "postinstall" : "./node_modules/bower/bin/bower install",
+    "update"      : "./node_modules/bower/bin/bower update",
+    "test"        : "./node_modules/mocha/bin/mocha --compilers coffee:coffee-script -c -t 10000 -R spec"
   },
 
 	"engines" : {
 		"node" : "0.8.22",
-		"npm" : "1.2.x"
+		"npm"  : "1.2.x"
 	}
 }
