@@ -8,7 +8,7 @@ describe 'routes', ->
         render: (page) ->
 
     describe 'HTTP get to index', ->
-        it "should support seeing an index page", (done) ->
+        it 'should support seeing an index page', (done) ->
             req = {path:'/'}
             res.render = (page) ->
                 page.should.equal 'index'
